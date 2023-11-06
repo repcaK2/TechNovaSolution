@@ -19,15 +19,13 @@ public class UserRegistrationSecurityConfig {
 
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-		return http.cors()
-				.and().csrf().disable()
+		return http.cors().and().csrf().disable()
 				.authorizeHttpRequests()
-				.requestMatchers("/register/**")
-				.permitAll()
+				.requestMatchers("/register").permitAll()
+				.requestMatchers("/register/**").permitAll()
 				.and()
 				.authorizeHttpRequests()
-				.requestMatchers("/users/**")
-				.permitAll()
+				.requestMatchers("/users/**").hasAnyAuthority("ADMIN")
 				.and().formLogin().and().build();
 	}
 }

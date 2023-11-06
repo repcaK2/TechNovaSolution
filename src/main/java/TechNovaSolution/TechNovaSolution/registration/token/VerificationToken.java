@@ -2,7 +2,6 @@ package TechNovaSolution.TechNovaSolution.registration.token;
 
 import TechNovaSolution.TechNovaSolution.user.User;
 import jakarta.persistence.*;
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
